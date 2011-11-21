@@ -5,24 +5,24 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " let Vundle manage Vundle
-" required! 
 Bundle 'gmarik/vundle'
 
 " My Bundles here:
-"
-" original repos on github
-Bundle 'tpope/vim-fugitive'
+" Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-easymotion'
-Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-" vim-scripts repos
-Bundle 'L9'
-Bundle 'FuzzyFinder'
+" Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+" Bundle 'L9'
+
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'nathanaelkane/vim-indent-guides'
-Bundle 'rails.vim'
-" non github repos
+
+Bundle 'git://github.com/vim-scripts/minibufexpl.vim.git'
 Bundle 'git://git.wincent.com/command-t.git'
-" ...
+Bundle 'git://github.com/scrooloose/nerdtree.git'
+
+Bundle 'git://github.com/vim-scripts/vibrantink.git'
+" Bundle 'git://github.com/altercation/vim-colors-solarized.git'
+" Bundle 'git://github.com/vim-scripts/Zenburn.git'
 
 filetype plugin indent on     " required! 
 "
@@ -68,6 +68,7 @@ set viminfo^=! " Add recently accessed projects menu (project plugin)
 " }
 
 " Vim UI {
+  set background=dark
   colorscheme vibrantink
 
   " set cursorcolumn " highlight the current column
@@ -129,5 +130,4 @@ set viminfo^=! " Add recently accessed projects menu (project plugin)
   set laststatus=2
   set statusline=%02n:%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 " }
-
 
