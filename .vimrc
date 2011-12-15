@@ -1,6 +1,16 @@
 set nocompatible               " be iMproved
 filetype off                   " required!
 
+" This file uses `vundle` to manage plugins
+" For installation, see: http://github.com/gmarik/vundle
+"
+" If you do not already have vundle installed, simply clone the repo into your .vim directory like so:
+"   git clone http://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+"
+" After that, open up vim and type:
+"   :BundleInstall
+"
+
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
@@ -8,21 +18,13 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " My Bundles here:
-" Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-easymotion'
-" Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-" Bundle 'L9'
-
 Bundle 'vim-ruby/vim-ruby'
-Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'git://github.com/nathanaelkane/vim-indent-guides.git'
 
 Bundle 'git://github.com/vim-scripts/minibufexpl.vim.git'
 Bundle 'git://git.wincent.com/command-t.git'
 Bundle 'git://github.com/scrooloose/nerdtree.git'
-
-Bundle 'git://github.com/vim-scripts/vibrantink.git'
-" Bundle 'git://github.com/altercation/vim-colors-solarized.git'
-" Bundle 'git://github.com/vim-scripts/Zenburn.git'
 
 filetype plugin indent on     " required! 
 "
@@ -36,11 +38,6 @@ filetype plugin indent on     " required!
 " NOTE: comments after Bundle command are not allowed..
 
 
-" Minibuffer Explorer Settings
-let g:miniBufExplMapWindowNavVim = 1
-let g:miniBufExplMapWindowNavArrows = 1
-let g:miniBufExplMapCTabSwitchBufs = 1
-let g:miniBufExplModSelTarget = 1
 
 set viminfo^=! " Add recently accessed projects menu (project plugin)
 
@@ -65,6 +62,15 @@ set viminfo^=! " Add recently accessed projects menu (project plugin)
 
   set ignorecase " ignore case when searching
   set smartcase " ignore case if search pattern is all lowercase, case-sensitive otherwise
+
+  " Minibuffer Explorer Settings
+  let g:miniBufExplMapWindowNavVim = 1
+  let g:miniBufExplMapWindowNavArrows = 1
+  let g:miniBufExplMapCTabSwitchBufs = 1
+  let g:miniBufExplModSelTarget = 1
+
+  " Indent Guides Settings
+  let g:indent_guides_guide_size = 1
 " }
 
 " Vim UI {
