@@ -137,3 +137,7 @@ set viminfo^=! " Add recently accessed projects menu (project plugin)
   set statusline=%02n:%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 " }
 
+" Plugins {
+  " open NERDtree automatically
+  autocmd VimEnter * NERDTree
+" }
