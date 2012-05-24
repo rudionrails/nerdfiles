@@ -1,30 +1,33 @@
 set nocompatible               " be iMproved
 filetype off                   " required!
 
-" This file uses `vundle` to manage plugins
-" For installation, see: http://github.com/gmarik/vundle
-"
-" If you do not already have vundle installed, simply clone the repo into your .vim directory like so:
-"   git clone http://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-"
-" After that, open up vim and type:
-"   :BundleInstall
-"
-
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " let Vundle manage Vundle
 Bundle 'gmarik/vundle'
 
-" My Bundles here:
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'git://github.com/nathanaelkane/vim-indent-guides.git'
-
 Bundle 'git://github.com/vim-scripts/minibufexpl.vim.git'
+Bundle 'git://github.com/vim-scripts/BufOnly.vim.git'
+Bundle 'git://github.com/vim-scripts/vibrantink.git'
+
+Bundle 'git::/github.com/Lokaltog/vim-easymotion.git'
+Bundle 'git://github.com/Lokaltog/vim-powerline.git'
+
+Bundle 'git://github.com/tpope/vim-fugitive.git'
+Bundle 'git://github.com/tpope/vim-cucumber.git'
+Bundle 'git://github.com/tpope/vim-markdown.git'
+Bundle 'git://github.com/tpope/vim-surround.git'
+
+Bundle 'git://github.com/nathanaelkane/vim-indent-guides.git'
 Bundle 'git://git.wincent.com/command-t.git'
 Bundle 'git://github.com/scrooloose/nerdtree.git'
+Bundle 'git://github.com/tomtom/tcomment_vim.git'
+
+Bundle 'vim-ruby/vim-ruby'
+
+" Bundle 'git://github.com/altercation/vim-colors-solarized.git'
+" Bundle 'git://github.com/vim-scripts/Zenburn.git'
 
 filetype plugin indent on     " required! 
 "
@@ -47,9 +50,18 @@ set viminfo^=! " Add recently accessed projects menu (project plugin)
   set undolevels=1000 " use many muchos levels of undo
   set autowrite  " Writes on make/shell commands
   set ruler  " Ruler on
+  set ai  " Set auto-indenting on for programming
   set nu  " Line numbers on
-  set nowrap  " Line wrapping off
   set timeoutlen=250  " Time to wait after ESC (default causes an annoying delay)
+
+  set wildmenu
+  set wildmode=list:longest,full
+
+  set splitright " open split window to the right (default: left)
+  " set splitbelow " open split window below (default: above)
+
+  set wrap  " Line wrapping on
+  let &showbreak = "↳ "
 
   " Disable Backups & Files
   set nobackup
@@ -62,6 +74,7 @@ set viminfo^=! " Add recently accessed projects menu (project plugin)
 
   set ignorecase " ignore case when searching
   set smartcase " ignore case if search pattern is all lowercase, case-sensitive otherwise
+  set backspace=indent,eol,start " make that backspace key work the way it should
 
   " Minibuffer Explorer Settings
   let g:miniBufExplMapWindowNavVim = 1
@@ -79,16 +92,16 @@ set viminfo^=! " Add recently accessed projects menu (project plugin)
 
   " set cursorcolumn " highlight the current column
   set cursorline   " highlight current line
+  set showmatch    " show matching brackets
   set hlsearch     " highlight search terms
   set incsearch    " show search matches as you type
 
   set list
-  set listchars=tab:+-,trail:.,extends:# " show tabs and trailing
+  set listchars=tab:+-,trail:.,extends:# " show tabs and trailing whitespace
 
   set report=0 " tell us when anything is changed via :...
 
   set showcmd " show the command being typed
-  set showmatch " show matching brackets
   set sidescrolloff=10 " Keep 5 lines at the size
 
   " set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%04v]
@@ -139,5 +152,10 @@ set viminfo^=! " Add recently accessed projects menu (project plugin)
 
 " Plugins {
   " open NERDtree automatically
-  autocmd VimEnter * NERDTree
+  " autocmd VimEnter * NERDTree
+
+  " augroup vimrc
+  "   autocmd!
+  "   autocmd GuiEnter * set columns=120 lines=70 number
+  " augroup END
 " }
