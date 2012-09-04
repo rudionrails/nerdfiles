@@ -7,30 +7,6 @@ call vundle#rc()
 " let Vundle manage Vundle
 Bundle 'gmarik/vundle'
 
-Bundle 'git://github.com/vim-scripts/minibufexpl.vim.git'
-Bundle 'git://github.com/vim-scripts/BufOnly.vim.git'
-Bundle 'git://github.com/vim-scripts/vibrantink.git'
-
-Bundle 'git::/github.com/Lokaltog/vim-easymotion.git'
-Bundle 'git://github.com/Lokaltog/vim-powerline.git'
-
-Bundle 'git://github.com/tpope/vim-fugitive.git'
-Bundle 'git://github.com/tpope/vim-cucumber.git'
-Bundle 'git://github.com/tpope/vim-markdown.git'
-Bundle 'git://github.com/tpope/vim-surround.git'
-
-Bundle 'git://github.com/nathanaelkane/vim-indent-guides.git'
-Bundle 'git://git.wincent.com/command-t.git'
-Bundle 'git://github.com/scrooloose/nerdtree.git'
-Bundle 'git://github.com/tomtom/tcomment_vim.git'
-
-Bundle 'vim-ruby/vim-ruby'
-
-" Bundle 'git://github.com/altercation/vim-colors-solarized.git'
-" Bundle 'git://github.com/vim-scripts/Zenburn.git'
-
-filetype plugin indent on     " required! 
-"
 " Brief help
 " :BundleList          - list configured bundles
 " :BundleInstall(!)    - install(update) bundles
@@ -41,6 +17,27 @@ filetype plugin indent on     " required!
 " NOTE: comments after Bundle command are not allowed..
 
 
+Bundle 'git://git.wincent.com/command-t.git'
+Bundle 'git://github.com/scrooloose/nerdtree.git'
+Bundle 'git://github.com/vim-scripts/minibufexpl.vim.git'
+Bundle 'git://github.com/vim-scripts/BufOnly.vim.git'
+
+Bundle 'git://github.com/Lokaltog/vim-easymotion.git'
+Bundle 'git://github.com/Lokaltog/vim-powerline.git'
+Bundle 'git://github.com/nathanaelkane/vim-indent-guides.git'
+
+Bundle 'vim-ruby/vim-ruby'
+
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-markdown'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-cucumber'
+Bundle 'tpope/vim-commentary'
+Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-haml'
+
+filetype plugin indent on     " required! 
+syntax on
 
 set viminfo^=! " Add recently accessed projects menu (project plugin)
 
@@ -103,22 +100,6 @@ set viminfo^=! " Add recently accessed projects menu (project plugin)
 
   set showcmd " show the command being typed
   set sidescrolloff=10 " Keep 5 lines at the size
-
-  " set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%04v]
-  " "              | | | | |  |   |      |  |     |    |
-  " "              | | | | |  |   |      |  |     |    + current
-  " "              | | | | |  |   |      |  |     |       column
-  " "              | | | | |  |   |      |  |     +-- current line
-  " "              | | | | |  |   |      |  +-- current % into file
-  " "              | | | | |  |   |      +-- current syntax in
-  " "              | | | | |  |   |          square brackets
-  " "              | | | | |  |   +-- current fileformat
-  " "              | | | | |  +-- number of lines
-  " "              | | | | +-- preview flag in square brackets
-  " "              | | | +-- help flag in square brackets
-  " "              | | +-- readonly flag in square brackets
-  " "              | +-- rodified flag in square brackets
-  " "              +-- full path to file in the buffer
 " }
 
 " Custom Mappings {
@@ -147,7 +128,7 @@ set viminfo^=! " Add recently accessed projects menu (project plugin)
 
   " It's useful to show the buffer number in the status line.
   set laststatus=2
-  set statusline=%02n:%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
+  " set statusline=%02n:%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 " }
 
 " Plugins {
