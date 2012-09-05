@@ -25,16 +25,20 @@ Bundle 'git://github.com/vim-scripts/BufOnly.vim.git'
 Bundle 'git://github.com/Lokaltog/vim-easymotion.git'
 Bundle 'git://github.com/Lokaltog/vim-powerline.git'
 Bundle 'git://github.com/nathanaelkane/vim-indent-guides.git'
+Bundle 'git://github.com/sjl/gundo.vim.git'
 
 Bundle 'vim-ruby/vim-ruby'
 
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-cucumber'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-haml'
+Bundle 'git://github.com/rodjek/vim-puppet.git'
+
 
 filetype plugin indent on     " required! 
 syntax on
@@ -72,15 +76,6 @@ set viminfo^=! " Add recently accessed projects menu (project plugin)
   set ignorecase " ignore case when searching
   set smartcase " ignore case if search pattern is all lowercase, case-sensitive otherwise
   set backspace=indent,eol,start " make that backspace key work the way it should
-
-  " Minibuffer Explorer Settings
-  let g:miniBufExplMapWindowNavVim = 1
-  let g:miniBufExplMapWindowNavArrows = 1
-  let g:miniBufExplMapCTabSwitchBufs = 1
-  let g:miniBufExplModSelTarget = 1
-
-  " Indent Guides Settings
-  let g:indent_guides_guide_size = 1
 " }
 
 " Vim UI {
@@ -132,8 +127,20 @@ set viminfo^=! " Add recently accessed projects menu (project plugin)
 " }
 
 " Plugins {
+  " Minibuffer Explorer Settings
+  let g:miniBufExplMapWindowNavVim = 1
+  let g:miniBufExplMapWindowNavArrows = 1
+  let g:miniBufExplMapCTabSwitchBufs = 1
+  let g:miniBufExplModSelTarget = 1
+
+  " Indent Guides Settings
+  let g:indent_guides_guide_size = 1
   " open NERDtree automatically
   " autocmd VimEnter * NERDTree
+
+  " Enable fancy mode for Powerline plugin
+  " let g:Powerline_symbols = 'fancy'
+
 
   " augroup vimrc
   "   autocmd!
